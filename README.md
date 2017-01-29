@@ -1,26 +1,21 @@
-# Slim Framework 3 Skeleton Application
+# Slim Framework
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+Lista simple de empleados
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+## Instalación
 
-## Install the Application
+```bash
+$ git clone https://github.com/nelson224/slim-task.git
+$ composer install
+```
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+## Rutas
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
+* **GET** /
+Muestra la lista de empleados con un campo de búsqueda por email.
 
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
+* **GET** /empleado/{id}
+Muestra los datos de un empleado.
 
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
-
-To run the application in development, you can also run this command. 
-
-	php composer.phar start
-
-Run this command to run the test suite
-
-	php composer.phar test
-
-That's it! Now go build something cool.
+* **GET** /salario/{min}/{max}
+Realiza una búsqueda de empleados por un rango de salario y devuelve una lista en formato xml.
