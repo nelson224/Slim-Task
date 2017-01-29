@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Slim 3</title>
+        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <style>
+            body {
+                margin: 50px 0 0 0;
+                padding: 0;
+                width: 100%;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                text-align: center;
+                color: #aaa;
+                font-size: 13px;
+            }
+
+            h1 {
+                color: #719e40;
+                letter-spacing: -3px;
+                font-family: 'Lato', sans-serif;
+                font-size: 100px;
+                font-weight: 200;
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Lista de Empleados</h2>
+        
+        <div>
+            <form action="/">
+                <input type="text" name="email" class="form-control"><button type="submit">Buscar por email</button>
+            </form>
+        </div>
+        <div class="bs-example">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Posición</th>
+                        <th>Salario</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($empleados as $empleado) { ?>
+                    <tr>
+                        <td><?php echo $empleado['name']; ?></td>
+                        <td><?php echo $empleado['email']; ?></td>
+                        <td><?php echo $empleado['position']; ?></td>
+                        <td><?php echo $empleado['salary']; ?></td>
+                        <td><a href="/empleado/<?php echo $empleado['id']; ?>" class="btn btn-info">Mostrar</a></td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
